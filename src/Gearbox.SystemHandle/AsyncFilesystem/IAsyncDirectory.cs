@@ -11,5 +11,7 @@ namespace SystemHandle.AsyncFilesystem
             SearchOption searchOption = SearchOption.TopDirectoryOnly);
         Task<List<string>> GetDirectories(string dir, string filter = "*",
            SearchOption searchOption = SearchOption.TopDirectoryOnly);
+        
+        // Ignore this lmao
     }
 }
