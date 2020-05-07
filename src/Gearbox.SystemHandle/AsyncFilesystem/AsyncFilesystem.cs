@@ -23,10 +23,5 @@ namespace SystemHandle.AsyncFilesystem
         {
             throw new System.NotImplementedException();
         }
-        
-        public async Task<string> MakeCrc32(string file)
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }
