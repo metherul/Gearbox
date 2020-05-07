@@ -1,0 +1,38 @@
+# .NET Desktop
+
+
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  solution: '**/*.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+
+steps:
+- task: NuGetToolInstaller@1
+
+- task: NuGetCommand@2
+  inputs:
+    restoreSolution: '$(solution)'
+
+- task: VSBuild@1
+  inputs:
+    solution: '$(solution)'
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'test'
+    projects: 'src/*.Tests/*.csproj'
+    
+- task: VSTest@2
+  inputs:
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
+
+
