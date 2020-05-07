@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Gearbox.SDK.Indexers
+﻿namespace Gearbox.Sdk.Indexers
 {
     public class MatchResult
     {

@@ -1,15 +1,15 @@
-﻿using Gearbox.SDK.Indexers;
-using Gearbox.Shared.ArchiveHandle;
-using Gearbox.Shared.FsExtensions;
-using Gearbox.Shared.HashUtils;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using SystemHandle.AsyncFilesystem;
+using Gearbox.Sdk.Indexers;
+using Gearbox.Shared.ArchiveHandle;
+using Gearbox.Shared.FsExtensions;
+using Gearbox.Shared.HashUtils;
 
-namespace Gearbox.SDK
+namespace Gearbox.Sdk
 {
     public class ArchiveEntry
     {

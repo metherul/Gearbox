@@ -1,6 +1,6 @@
 ﻿using Gearbox.Shared.ModOrganizer;
 
-namespace Gearbox.SDK
+namespace Gearbox.Sdk.Compiling
 {
     public class CompilerOptions
     {

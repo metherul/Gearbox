@@ -1,14 +1,14 @@
-﻿using Gearbox.Formats.OMS;
-using Gearbox.SDK.Indexers;
-using Gearbox.Shared.JsonExt;
-using Gearbox.Shared.ModOrganizer;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Gearbox.Formats.OMS;
+using Gearbox.Sdk.Indexers;
+using Gearbox.Shared.JsonExt;
+using Gearbox.Shared.ModOrganizer;
 
-namespace Gearbox.SDK
+namespace Gearbox.Sdk.Compiling
 {
     public class OmsCompiler
     {

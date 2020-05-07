@@ -1,9 +1,9 @@
-﻿using Fastenshtein;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Fastenshtein;
 
-namespace Gearbox.SDK.Indexers
+namespace Gearbox.Sdk.Indexers
 {
     public static class MatchResultReducer
     {

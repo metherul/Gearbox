@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Diagnostics;
 using System.IO;
-using System.Reflection.Metadata.Ecma335;
 using System.Threading.Tasks;
+using SystemHandle.AsyncFilesystem;
 using Gearbox.Shared.HashUtils;
 using SevenZipExtractor;
 
-namespace Gearbox.SDK.Indexers
+namespace Gearbox.Sdk.Indexers
 {
     public class FileEntry
     {

@@ -1,14 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="OMS\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <PackageReference Include="Autofac" Version="5.1.3" />
     <PackageReference Include="Fastenshtein" Version="1.0.0.5" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
@@ -16,6 +13,25 @@
   <ItemGroup>
     <ProjectReference Include="..\Gearbox.Formats\Gearbox.Formats.csproj" />
     <ProjectReference Include="..\Gearbox.Shared\Gearbox.Shared.csproj" />
+    <ProjectReference Include="..\Gearbox.SystemHandle\Gearbox.SystemHandle.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Indexers\**" />
+    <Compile Remove="ArchiveEntry.cs" />
+    <Compile Remove="IndexerOld.cs" />
+    <Compile Remove="ModEntry.cs" />
+    <Compile Remove="Compiling\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Indexers\**" />
+    <EmbeddedResource Remove="Compiling\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Indexers\**" />
+    <None Remove="Compiling\**" />
   </ItemGroup>
 
 </Project>

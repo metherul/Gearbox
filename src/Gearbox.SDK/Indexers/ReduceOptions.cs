@@ -1,4 +1,4 @@
-﻿namespace Gearbox.SDK.Indexers
+﻿namespace Gearbox.Sdk.Indexers
 {
     public class ReduceOptions
     {

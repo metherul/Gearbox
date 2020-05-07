@@ -1,9 +1,9 @@
-﻿using Gearbox.Shared.JsonExt;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Gearbox.Shared.JsonExt;
 
-namespace Gearbox.SDK.Indexers
+namespace Gearbox.Sdk.Indexers
 {
     public class IndexWriter
     {

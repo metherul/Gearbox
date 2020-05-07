@@ -2,11 +2,12 @@
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using Gearbox.SDK.Indexers;
+using SystemHandle.AsyncFilesystem;
+using Gearbox.Sdk.Indexers;
 using Gearbox.Shared.FsExtensions;
 using Gearbox.Shared.HashUtils;
 
-namespace Gearbox.SDK
+namespace Gearbox.Sdk
 {
     public class ModEntry
     {

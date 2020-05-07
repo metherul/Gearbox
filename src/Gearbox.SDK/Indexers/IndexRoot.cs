@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
-namespace Gearbox.SDK.Indexers
+namespace Gearbox.Sdk.Indexers
 {
     public class IndexRoot
     {

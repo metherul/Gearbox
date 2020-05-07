@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Autofac" Version="5.1.3" />
     <PackageReference Include="Crc32.NET" Version="1.2.0" />
     <PackageReference Include="ini-parser-netstandard" Version="2.5.2" />
     <PackageReference Include="LanguageExt.Core" Version="3.4.12" />
@@ -32,7 +33,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Archives\" />
+    <ProjectReference Include="..\Gearbox.Managers\Gearbox.Managers.csproj" />
+    <ProjectReference Include="..\Gearbox.SDK\Gearbox.SDK.csproj" />
+    <ProjectReference Include="..\Gearbox.SystemHandle\Gearbox.SystemHandle.csproj" />
   </ItemGroup>
 
 </Project>

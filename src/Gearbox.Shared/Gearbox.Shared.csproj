@@ -1,14 +1,27 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Autofac" Version="5.1.3" />
     <PackageReference Include="Crc32.NET" Version="1.2.0" />
     <PackageReference Include="ini-parser-netstandard" Version="2.5.2" />
     <PackageReference Include="SevenZipExtractor" Version="1.0.15" />
     <PackageReference Include="Syroot.Windows.IO.KnownFolders" Version="1.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="HashUtils\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="HashUtils\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="HashUtils\**" />
   </ItemGroup>
 
 </Project>
