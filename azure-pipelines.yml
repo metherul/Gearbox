@@ -15,17 +15,21 @@ variables:
 
 steps:
 - task: NuGetToolInstaller@1
+  displayName: 'NuGet Install'
 
 - task: NuGetCommand@2
+  displayName: "Dotnet Restore"
   inputs:
     restoreSolution: '$(solution)'
 
 - task: DotNetCoreCLI@2
+  displayName: 'Dotnet Build'
   inputs:
     command: 'build'
     projects: '$(solution)'
 
 - task: DotNetCoreCLI@2
+  displayName: 'Dotnet Test'
   inputs:
     command: 'test'
     projects: 'src/*.Tests/*.csproj'
