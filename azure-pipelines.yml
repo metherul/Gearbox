@@ -1,8 +1,5 @@
 # .NET Desktop
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'test'
-    projects: 'src/*.Tests/*.csproj'
+
 
 trigger:
 - master
@@ -28,7 +25,14 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'test'
+    projects: 'src/*.Tests/*.csproj'
+    
 - task: VSTest@2
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+
+
