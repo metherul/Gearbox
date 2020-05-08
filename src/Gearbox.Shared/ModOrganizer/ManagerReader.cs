@@ -52,7 +52,7 @@ namespace Gearbox.Shared.ModOrganizer
             // Grab user directories, if prompted.
             if (searchOption.SearchUserDirectores)
             {
-                var userDirs = new List<string>()
+                var userDirs = new List<string>
                 {
                     new KnownFolder(KnownFolderType.Downloads).Path,
                     new KnownFolder(KnownFolderType.Documents).Path,

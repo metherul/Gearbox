@@ -49,7 +49,7 @@ namespace SystemHandle.AsyncFilesystem
                 }
 
                 // To prevent issues with file ownership timings, we only return the *last* file extracted.
-                if (last == string.Empty)
+                if (string.IsNullOrEmpty(last))
                 {
                     last = path;
                     continue;

@@ -9,4 +9,13 @@
       <PackageReference Include="Autofac" Version="5.1.3" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Update="Assets\7z.dll">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Assets\7z.exe">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
 </Project>
