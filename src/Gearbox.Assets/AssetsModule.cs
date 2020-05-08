@@ -6,7 +6,7 @@ namespace Gearbox.Assets
     {
         protected override void Load(ContainerBuilder builder)
         {
-            base.Load(builder);
+            builder.RegisterType<AssetService>().As<IAssetService>();
         }
     }
 }
