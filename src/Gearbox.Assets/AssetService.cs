@@ -2,7 +2,6 @@
 using System.IO;
 using System.Threading.Tasks;
 using SystemHandle.AsyncFilesystem;
-using Autofac;
 
 namespace Gearbox.Assets
 {
@@ -11,7 +10,7 @@ namespace Gearbox.Assets
         private readonly IAssetReader _assetReader;
         private readonly IAsyncDirectory _asyncDirectory;
 
-        public string AssetDirectory => Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "assets");
+        public string AssetDirectory => Path.Combine(Environment.CurrentDirectory, "assets");
 
         public AssetService(IAssetReader assetReader, IAsyncDirectory asyncDirectory)
         {
@@ -21,17 +20,17 @@ namespace Gearbox.Assets
 
         public void CreateAssetDirectory()
         {
-            Directory.CreateDirectory(AssetDirectory);
+            _asyncDirectory.CreateDirectory(AssetDirectory);
         }
 
         public async Task RemoveAssetDirectory()
         {
-            if (!Directory.Exists(AssetDirectory))
+            if (!_asyncDirectory.Exists(AssetDirectory))
             {
                 throw new AssetDirNotFoundException();
             }
 
-            await _asyncDirectory.Delete(AssetDirectory, true);
+            await _asyncDirectory.DeleteAsync(AssetDirectory, true);
         }
 
         public IAssetReader OpenRead()

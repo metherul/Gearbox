@@ -1,40 +1,49 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.IO.Abstractions;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace SystemHandle.AsyncFilesystem
 {
-    public class AsyncDirectory : IAsyncDirectory
+    public class AsyncDirectory : DirectoryWrapper, IAsyncDirectory
     {
-        public Task<List<string>> GetDirectories(string dir, string filter = "*", SearchOption searchOption = SearchOption.TopDirectoryOnly)
+        private readonly IFileStreamFactory _fileStream;
+        
+        public AsyncDirectory(IFileSystem fileSystem) : base(fileSystem)
         {
-            return Task.Run(() => Directory.GetDirectories(dir, filter, searchOption).ToList());
+            _fileStream = fileSystem.FileStream;
+        }
+        
+        public virtual Task<List<string>> GetDirectoriesAsync(string dir, string filter = "*", SearchOption searchOption = SearchOption.TopDirectoryOnly)
+        {
+            return Task.Run(() => GetDirectories(dir, filter, searchOption).ToList());
         }
 
-        public Task<List<string>> GetFiles(string dir, string filter = "*", SearchOption searchOption = SearchOption.TopDirectoryOnly)
+        public virtual Task<List<string>> GetFilesAsync(string dir, string filter = "*", SearchOption searchOption = SearchOption.TopDirectoryOnly)
         {
-            return Task.Run(() => Directory.GetFiles(dir, filter, searchOption).ToList());
+            return Task.Run(() => GetFiles(dir, filter, searchOption).ToList());
         }
 
-        public async Task Delete(string dir, bool recursive = false)
+        public virtual async Task DeleteAsync(string dir, bool recursive = false)
         {
-            var directoryContents = await GetFiles(dir, "*", SearchOption.AllDirectories);
+            var directoryContents = await GetFilesAsync(dir, "*", SearchOption.AllDirectories);
 
             if (!directoryContents.Any())
             {
-                Directory.Delete(dir);
+                Delete(dir, true);
                 return;
             }
 
             foreach (var file in directoryContents)
             {
-                await using var fileStream = new FileStream(file, FileMode.Truncate, FileAccess.ReadWrite, FileShare.Delete, 1,
+                await using var fileStream = _fileStream.Create(file, FileMode.Truncate, FileAccess.ReadWrite, FileShare.Delete, 1,
                                                       FileOptions.DeleteOnClose | FileOptions.Asynchronous);
                 await fileStream.FlushAsync();
             }
 
-            Directory.Delete(dir, true);
+            Delete(dir, true);
         }
     }
 }

@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Gearbox.Assets\Gearbox.Assets.csproj" />
+    <ProjectReference Include="..\Gearbox.Tests.Shared\Gearbox.Tests.Shared.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,20 @@
+﻿C:\Test1\Test2\Test3\extract\FNIS Behavior 7.4.5
+C:\Test1\Test2\Test3\extract\FNIS Behavior 7.4.5\Data
+C:\Test1\Test2\Test3\extract\FNIS Behavior 7.4.5\Data\Meshes
+C:\Test1\Test2\Test3\extract\FNIS Behavior 7.4.5\Data\Meshes\actors
+C:\Test1\Test2\Test3\extract\FNIS Behavior 7.4.5\Data\Meshes\actors\character
+C:\Test1\Test2\Test3\extract\FNIS Behavior 7.4.5\Data\Meshes\actors\character\animations
+C:\Test1\Test2\Test3\extract\FNIS Behavior 7.4.5\Data\Meshes\actors\character\animations\FNISBase
+C:\Test1\Test2\Test3\extract\FNIS Behavior 7.4.5\Data\Meshes\actors\character\behaviors
+C:\Test1\Test2\Test3\extract\FNIS Behavior 7.4.5\Data\Meshes\actors\character\characters
+C:\Test1\Test2\Test3\extract\FNIS Behavior 7.4.5\Data\Meshes\actors\character\characters female
+C:\Test1\Test2\Test3\extract\FNIS Behavior 7.4.5\Data\scripts
+C:\Test1\Test2\Test3\extract\FNIS Behavior 7.4.5\Data\scripts\source
+C:\Test1\Test2\Test3\extract\FNIS Behavior 7.4.5\Data\tools
+C:\Test1\Test2\Test3\extract\FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Modders
+C:\Test1\Test2\Test3\extract\FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Modders\templates
+C:\Test1\Test2\Test3\extract\FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Modders\temporary_logs
+C:\Test1\Test2\Test3\extract\FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users
+C:\Test1\Test2\Test3\extract\FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\languages
+C:\Test1\Test2\Test3\extract\FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\templates
+C:\Test1\Test2\Test3\extract\FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\temporary_logs

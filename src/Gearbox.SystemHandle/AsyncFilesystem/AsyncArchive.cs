@@ -1,38 +1,38 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.IO.Abstractions;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace SystemHandle.AsyncFilesystem
 {
-    public class ArchiveHandle : IArchiveHandle
+    public class AsyncArchive : IAsyncArchive
     {
-        public event EventHandler<string> FileExtractedEvent;
+        private readonly IAsyncDirectory _directory;
+        private readonly IProcessService _processService;
+
+        public AsyncArchive(IAsyncDirectory directory, IProcessService processService)
+        {
+            _directory = directory;
+            _processService = processService;
+        }
+        
         public async Task Extract(string extractDir, string archivePath)
         {
-            // TODO: More flexible 7z.exe path find.
-            
-            using var process = new Process();
-            var procArguments = $"x \"{archivePath}\" -o\"{extractDir}\" -y -bsp1 -bb2 -sccUTF-8 -mmt=on";
-            var processStartInfo = new ProcessStartInfo()
-            {
-                CreateNoWindow = true,
-                UseShellExecute = false,
-                FileName = Path.Combine(Directory.GetCurrentDirectory(), "7z.exe"),
-                Arguments = procArguments,
-                RedirectStandardOutput = true,
-                StandardOutputEncoding = Encoding.UTF8
-            };
+            // A little cheat that lets up enumerate and then dispose.
+            await ExtractAndYieldOutput(extractDir, archivePath).GetAsyncEnumerator().DisposeAsync();
+        }
 
-            process.StartInfo = processStartInfo;
-            process.Start();
+        public async IAsyncEnumerable<string> ExtractAndYieldOutput(string extractDir, string archivePath)
+        {
+            var procArguments = $"x \"{archivePath}\" -o\"{extractDir}\" -y -bsp1 -bb2 -sccUTF-8 -mmt=on";
+            var fileName = Path.Combine(_directory.GetCurrentDirectory(), "7z.dll");
 
             var last = "";
-            while (!process.StandardOutput.EndOfStream)
+            await foreach (var line in _processService.RunAndYieldOutput(fileName, procArguments))
             {
-                var line = await process.StandardOutput.ReadLineAsync();
-
                 // If the line contains no data, ignore it.
                 if (string.IsNullOrWhiteSpace(line) || !line.StartsWith("- "))
                 {
@@ -40,10 +40,10 @@ namespace SystemHandle.AsyncFilesystem
                 }
 
                 // Grab the relative path, removing: '- ' from the line.
-                var path = Path.Combine(extractDir, line[2..]);
+                var path = Path.GetFullPath(Path.Combine(extractDir, line[2..]));
 
                 // If the path is actually a directory, ignore it.
-                if (Directory.Exists(path))
+                if (_directory.Exists(path))
                 {
                     continue;
                 }
@@ -56,15 +56,12 @@ namespace SystemHandle.AsyncFilesystem
                 }
 
                 // Pass the path back to the event handler.
-                FileExtractedEvent.Invoke(this, last);
+                yield return last;
                 last = path;
             }
-
+            
             // Take care of the very last path.
-            FileExtractedEvent.Invoke(this, last);
-
-            await Task.Run(() => process.WaitForExit());
-            process.Close();
+            yield return last;
         }
     }
 }

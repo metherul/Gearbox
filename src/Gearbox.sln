@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gearbox.Assets", "Gearbox.A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gearbox.Assets.Tests", "Gearbox.Assets.Tests\Gearbox.Assets.Tests.csproj", "{C21CB120-8BD5-479A-8641-848520AAD2B7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gearbox.Tests.Shared", "Gearbox.Tests.Shared\Gearbox.Tests.Shared.csproj", "{8DDC6974-1E8F-4C93-8C6A-42C46565C26E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,10 @@ Global
 		{C21CB120-8BD5-479A-8641-848520AAD2B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C21CB120-8BD5-479A-8641-848520AAD2B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C21CB120-8BD5-479A-8641-848520AAD2B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DDC6974-1E8F-4C93-8C6A-42C46565C26E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DDC6974-1E8F-4C93-8C6A-42C46565C26E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DDC6974-1E8F-4C93-8C6A-42C46565C26E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DDC6974-1E8F-4C93-8C6A-42C46565C26E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -78,6 +84,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{2B7E90D3-99B9-4C11-B7C0-D91DDA3879A2} = {8B57EDD0-C45B-482A-9F66-A7A3CF861B25}
 		{C21CB120-8BD5-479A-8641-848520AAD2B7} = {8B57EDD0-C45B-482A-9F66-A7A3CF861B25}
+		{8DDC6974-1E8F-4C93-8C6A-42C46565C26E} = {8B57EDD0-C45B-482A-9F66-A7A3CF861B25}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D7764860-5699-4150-8549-6A3BDF176297}

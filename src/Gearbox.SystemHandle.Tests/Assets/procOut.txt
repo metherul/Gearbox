@@ -1,0 +1,142 @@
+﻿
+7-Zip 19.00 (x64) : Copyright (c) 1999-2018 Igor Pavlov : 2019-02-21
+
+Scanning the drive for archives:
+1 file, 3498294 bytes (3417 KiB)
+
+Extracting archive: .\FNIS Behavior 7_4_5-11811-7-4-5.7z
+--
+Path = .\FNIS Behavior 7_4_5-11811-7-4-5.7z
+Type = 7z
+Physical Size = 3498294
+Headers Size = 2633
+Method = LZMA2:24 BCJ
+Solid = +
+Blocks = 2
+
+- FNIS Behavior 7.4.5
+- FNIS Behavior 7.4.5\Data
+- FNIS Behavior 7.4.5\Data\Meshes
+- FNIS Behavior 7.4.5\Data\Meshes\actors
+- FNIS Behavior 7.4.5\Data\Meshes\actors\character
+- FNIS Behavior 7.4.5\Data\Meshes\actors\character\animations
+- FNIS Behavior 7.4.5\Data\Meshes\actors\character\animations\FNISBase
+- FNIS Behavior 7.4.5\Data\Meshes\actors\character\behaviors
+- FNIS Behavior 7.4.5\Data\Meshes\actors\character\characters
+- FNIS Behavior 7.4.5\Data\Meshes\actors\character\characters female
+- FNIS Behavior 7.4.5\Data\scripts
+- FNIS Behavior 7.4.5\Data\scripts\source
+- FNIS Behavior 7.4.5\Data\tools
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Modders
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Modders\templates
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Modders\temporary_logs
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\languages
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\templates
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\temporary_logs
+- FNIS Behavior 7.4.5\Data\FNIS.esp
+- FNIS Behavior 7.4.5\Data\FNIS.ini0
+- FNIS Behavior 7.4.5\Data\Meshes\actors\character\animations\FNISBase\FNIS_FNISBase_List.txt
+- FNIS Behavior 7.4.5\Data\Meshes\actors\character\behaviors\0_master.hkx
+- FNIS Behavior 7.4.5\Data\Meshes\actors\character\behaviors\1hm_behavior.hkx
+- FNIS Behavior 7.4.5\Data\Meshes\actors\character\behaviors\1hm_locomotion.hkx
+- FNIS Behavior 7.4.5\Data\Meshes\actors\character\behaviors\bashbehavior.hkx
+- FNIS Behavior 7.4.5\Data\Meshes\actors\character\behaviors\blockbehavior.hkx
+- FNIS Behavior 7.4.5\Data\Meshes\actors\character\behaviors\bow_direction_behavior.hkx
+- FNIS Behavior 7.4.5\Data\Meshes\actors\character\behaviors\FNIS_FNISBase_Behavior.hkx
+- FNIS Behavior 7.4.5\Data\Meshes\actors\character\behaviors\idlebehavior.hkx
+- FNIS Behavior 7.4.5\Data\Meshes\actors\character\behaviors\magicbehavior.hkx
+- FNIS Behavior 7.4.5\Data\Meshes\actors\character\behaviors\magicmountedbehavior.hkx
+- FNIS Behavior 7.4.5\Data\Meshes\actors\character\behaviors\magic_readied_direction_behavior.hkx
+- FNIS Behavior 7.4.5\Data\Meshes\actors\character\behaviors\mt_behavior.hkx
+- FNIS Behavior 7.4.5\Data\Meshes\actors\character\behaviors\shout_behavior.hkx
+- FNIS Behavior 7.4.5\Data\Meshes\actors\character\behaviors\sprintbehavior.hkx
+- FNIS Behavior 7.4.5\Data\Meshes\actors\character\behaviors\staggerbehavior.hkx
+- FNIS Behavior 7.4.5\Data\Meshes\actors\character\behaviors\weapequip.hkx
+- FNIS Behavior 7.4.5\Data\Meshes\actors\character\characters female\defaultfemale.hkx
+- FNIS Behavior 7.4.5\Data\Meshes\actors\character\characters\defaultmale.hkx
+- FNIS Behavior 7.4.5\Data\Meshes\animationdatasinglefile.txt
+- FNIS Behavior 7.4.5\Data\Meshes\animationsetdatasinglefile.txt
+- FNIS Behavior 7.4.5\Data\scripts\fnis.pex
+- FNIS Behavior 7.4.5\Data\scripts\FNISVersion.pex
+- FNIS Behavior 7.4.5\Data\scripts\FNIS_aa.pex
+- FNIS Behavior 7.4.5\Data\scripts\FNIS_aaNPCLoad.pex
+- FNIS Behavior 7.4.5\Data\scripts\FNIS_aaPlayerLoad.pex
+- FNIS Behavior 7.4.5\Data\scripts\FNIS_aaQuest.pex
+- FNIS Behavior 7.4.5\Data\scripts\FNIS_aaQuest2.pex
+- FNIS Behavior 7.4.5\Data\scripts\source\fnis.psc
+- FNIS Behavior 7.4.5\Data\scripts\source\FNISVersion.psc
+- FNIS Behavior 7.4.5\Data\scripts\source\FNISVersionGenerated.psc
+- FNIS Behavior 7.4.5\Data\scripts\source\FNIS_aa.psc
+- FNIS Behavior 7.4.5\Data\scripts\source\FNIS_aa2.psc
+- FNIS Behavior 7.4.5\Data\scripts\source\FNIS_aaNPCLoad.psc
+- FNIS Behavior 7.4.5\Data\scripts\source\FNIS_aaPlayerLoad.psc
+- FNIS Behavior 7.4.5\Data\scripts\source\FNIS_aaQuest.psc
+- FNIS Behavior 7.4.5\Data\scripts\source\FNIS_aaQuest2.psc
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Modders\hkxcmd LICENSE.TXT
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Modders\templates\FNIS_Behavior_TEMPLATE.txt
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Modders\temporary_logs\DUMMY_FILE_for_NMM_installation_only.txt
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\Alternate_AnimationGroups.txt
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\AnimEvents.txt
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\AnimVars.txt
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\CustomPreCacheFiles.txt
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\DebugData.txt
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\FNIS_Templates.txt
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\hkxcmd LICENSE.TXT
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\languages\Bahasa Indonesia.txt
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\languages\Deutsch.txt
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\languages\English.txt
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\languages\Espa├▒ol.txt
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\languages\Fran├ºais.txt
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\languages\Italiano.txt
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\languages\Magyar (Hungarian).txt
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\languages\Norsk Bokm├Ñl.txt
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\languages\Polski.txt
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\languages\Portugu├¬s.txt
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\languages\Srpski (Serbian).txt
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\languages\Svenska (Swedish).txt
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\languages\╨æ╤è╨╗╨│╨░╤Ç╤ü╨║╨╕ (Bulgarian).txt
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\languages\╨á╤â╤ü╤ü╨║╨╕╨╣ (Russian).txt
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\languages\Σ╕¡µûç (Chinese simpl.).txt
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\languages\µùÑµ£¼Φ¬₧ (Japanese).txt
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\languages\Φ¬₧Φ¿Ç (Chinese trad.).txt
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\languages\φò£Ω╡¡∞û┤ (Korean).txt
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\PatchAnimationFiles.txt
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\PatchList.txt
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\templates\0_master_TEMPLATE.txt
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\templates\1hm_behavior_PATCHED.hkx
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\templates\1hm_behavior_TEMPLATE.txt
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\templates\1hm_locomotion_TEMPLATE.txt
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\templates\animationdatasinglefile_TEMPLATE.txt
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\templates\animationsetdatasinglefile_TEMPLATE.txt
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\templates\bashbehavior_TEMPLATE.txt
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\templates\blockbehavior_TEMPLATE.txt
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\templates\bow_direction_behavior_TEMPLATE.txt
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\templates\defaultfemale_TEMPLATE.txt
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\templates\defaultmale_TEMPLATE.txt
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\templates\FNISVersionGenerated_TEMPLATE.pex
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\templates\FNIS_aa2_TEMPLATE.pex
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\templates\FNIS_PCEA2_TEMPLATE.pex
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\templates\idlebehavior_PATCHED.hkx
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\templates\idlebehavior_TEMPLATE.txt
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\templates\magicbehavior_TEMPLATE.txt
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\templates\magicmountedbehavior_TEMPLATE.txt
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\templates\magic_readied_direction_behavior_TEMPLATE.txt
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\templates\mt_behavior_TEMPLATE.txt
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\templates\shout_behavior_TEMPLATE.txt
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\templates\sprintbehavior_TEMPLATE.txt
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\templates\staggerbehavior_TEMPLATE.txt
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\templates\weapequip_TEMPLATE.txt
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\temporary_logs\DUMMY_FILE_for_NMM_installation_only.txt
+- FNIS Behavior 7.4.5\FNISACweaponScript_EXAMPLE_SCRIPT.psc
+- FNIS Behavior 7.4.5\FNIS_FNIS_Readme_7.4.5.txt
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Modders\generatefnisformodders.exe
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Modders\hkxcmd.exe
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\GenerateFNISforUsers.exe
+- FNIS Behavior 7.4.5\Data\tools\GenerateFNIS_for_Users\hkxcmd.exe
+Everything is Ok
+
+Folders: 20
+Files: 100
+Size:       54886511
+Compressed: 3498294

@@ -1,32 +1,36 @@
-using Autofac;
 using Autofac.Extras.Moq;
 using NUnit.Framework;
 using System;
 using System.IO;
 using System.Threading.Tasks;
+using SystemHandle.AsyncFilesystem;
+using Gearbox.Tests.Shared;
+using Moq;
 
 namespace Gearbox.Assets.Tests
 {
-    public class AssetServiceTests
+    public class AssetServiceTests : IocEnabledTest<AssetsModule>
     {
         private IAssetService _assetService;
 
         [SetUp]
         public void Setup()
         {
-            using var mock = AutoMock.GetLoose();
-            _assetService = mock.Create<AssetService>();
+            var mock = AutoMock.GetLoose();
         }
 
         [Test]
         public void TestAssetDirectory()
         {
-            Assert.AreEqual(_assetService.AssetDirectory, Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "assets"));
+            var assetService = new AssetService(new Mock<IAssetReader>().Object, new Mock<IAsyncDirectory>().Object);
+            Assert.AreEqual(assetService.AssetDirectory, Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "assets"));
         }
 
         [Test]
         public void TestCreateAssetDirectory()
         {
+            var dirMock = new Mock<IAsyncDirectory>();
+            var assetService = new AssetService(new Mock<IAssetReader>().Object, dirMock.Object);
             _assetService.CreateAssetDirectory();
 
             Assert.IsTrue(Directory.Exists(_assetService.AssetDirectory));

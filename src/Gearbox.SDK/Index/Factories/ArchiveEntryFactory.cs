@@ -11,12 +11,12 @@ namespace Gearbox.Sdk.Index.Factories
 {
     public class ArchiveEntryFactory : IArchiveEntryFactory
     {
-        private readonly IArchiveHandle _archiveHandle;
+        private readonly IAsyncArchive _archiveHandle;
         private readonly IAsyncFilesystem _asyncFilesystem;
         private readonly IAsyncHash _hashers;
         private readonly IFileEntryFactory _fileEntryFactory;
 
-        public ArchiveEntryFactory(IFileEntryFactory fileEntryFactory, IArchiveHandle archiveHandle,
+        public ArchiveEntryFactory(IFileEntryFactory fileEntryFactory, IAsyncArchive archiveHandle,
             IAsyncFilesystem asyncFilesystem, IAsyncHash hashers)
         {
             _fileEntryFactory = fileEntryFactory;

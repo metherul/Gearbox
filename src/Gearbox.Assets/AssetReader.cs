@@ -1,6 +1,6 @@
 ﻿namespace Gearbox.Assets
 {
-    public class AssetReader
+    public class AssetReader : IAssetReader
     {
     }
 }
