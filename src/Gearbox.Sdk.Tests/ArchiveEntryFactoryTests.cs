@@ -33,7 +33,7 @@ namespace Gearbox.Sdk.Tests
         }
         
         [Test]
-        public async Task TestCreate_ShouldPass()
+        public async Task TestCreateArchiveEntry()
         {
             var archiveContents = new List<string>
             {
@@ -86,7 +86,7 @@ namespace Gearbox.Sdk.Tests
             // Test to ensure every call to IFileEntryFactory was to a file in the archive.
             fileEntryFactoryMock.Verify(x => x.Create(It.Is<string>(a => archiveContents.Contains(a)), It.IsAny<string>(), It.IsAny<FileHashType>()));
             
-            // Test to ensure every call to IAsyncHashFactory was to a file in the archive.
+            // Test to ensure that the IAsyncFileHash.MakeMd5() call had archiveName as an argument.
             asyncHashMock.Verify(x => x.MakeMd5(It.Is<string>(a => a == archiveName)));
             
             // Test to ensure that the result contains the correct file entries and archive information.

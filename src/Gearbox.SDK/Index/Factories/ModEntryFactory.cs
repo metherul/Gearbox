@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System.IO.Abstractions;
 using System.Linq;
 using System.Threading.Tasks;
 using SystemHandle.AsyncFilesystem;
@@ -12,18 +13,20 @@ namespace Gearbox.Sdk.Index.Factories
     {
         private readonly IFileEntryFactory _fileEntryFactory;
         private readonly IAsyncDirectory _asyncDirectory;
+        private readonly IDirectoryInfoFactory _directoryInfoFactory;
         private readonly IAsyncHash _asyncHash;
 
-        public ModEntryFactory(IFileEntryFactory fileEntryFactory, IAsyncDirectory asyncDirectory, IAsyncHash asyncHash)
+        public ModEntryFactory(IFileEntryFactory fileEntryFactory, IAsyncDirectory asyncDirectory, IDirectoryInfoFactory directoryInfoFactory, IAsyncHash asyncHash)
         {
             _fileEntryFactory = fileEntryFactory;
             _asyncDirectory = asyncDirectory;
+            _directoryInfoFactory = directoryInfoFactory;
             _asyncHash = asyncHash;
         }
 
         public async Task<IModEntry> Create(string modDir)
         {
-            var dirInfo = new DirectoryInfo(modDir);
+            var dirInfo = _directoryInfoFactory.FromDirectoryName(modDir);
 
             var contents = await _asyncDirectory.GetFilesAsync(modDir, "*", SearchOption.AllDirectories);
             var entryTasks = new List<Task<IFileEntry>>();
@@ -36,7 +39,6 @@ namespace Gearbox.Sdk.Index.Factories
             
             var modEntry = new ModEntry()
             {
-                
                 Name = dirInfo.Name,
                 Directory = modDir,
                 FilesystemHash = await _asyncHash.MakeFilesystemHash(modDir)
