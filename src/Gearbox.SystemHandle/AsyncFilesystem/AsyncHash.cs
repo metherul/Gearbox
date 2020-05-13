@@ -10,16 +10,18 @@ namespace SystemHandle.AsyncFilesystem
 {
     public class AsyncHash : IAsyncHash
     {
-        private readonly IAsyncFilesystem _asyncFilesystem;
+        private readonly IAsyncFile _asyncFile;
+        private readonly IAsyncDirectory _asyncDirectory;
 
-        public AsyncHash(IAsyncFilesystem asyncFilesystem)
+        public AsyncHash(IAsyncFile asyncFile, IAsyncDirectory asyncDirectory)
         {
-            _asyncFilesystem = asyncFilesystem;
+            _asyncFile = asyncFile;
+            _asyncDirectory = asyncDirectory;
         }
         
         public async Task<string> MakeFilesystemHash(string dir)
         {
-            var contents = await  _asyncFilesystem.GetFiles(dir, "*", SearchOption.AllDirectories);
+            var contents = await _asyncDirectory.GetFilesAsync(dir, "*", SearchOption.AllDirectories);
             return await MakeFilesystemHash(dir, contents.ToList()); 
         }
 
@@ -40,7 +42,7 @@ namespace SystemHandle.AsyncFilesystem
 
         public Task<string> MakeMd5(string file)
         {
-            return MakeMd5(File.OpenRead(file));
+            return MakeMd5(_asyncFile.OpenRead(file));
         }
 
         public async Task<string> MakeMd5(Stream stream)

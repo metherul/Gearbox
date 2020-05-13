@@ -11,21 +11,21 @@ namespace Gearbox.Sdk.Index.Factories
     public class ModEntryFactory : IModEntryFactory
     {
         private readonly IFileEntryFactory _fileEntryFactory;
-        private readonly IAsyncFilesystem _asyncFilesystem;
-        private readonly IAsyncHash _hashers;
+        private readonly IAsyncDirectory _asyncDirectory;
+        private readonly IAsyncHash _asyncHash;
 
-        public ModEntryFactory(IFileEntryFactory fileEntryFactory, IAsyncFilesystem asyncFilesystem, IAsyncHash hashers)
+        public ModEntryFactory(IFileEntryFactory fileEntryFactory, IAsyncDirectory asyncDirectory, IAsyncHash asyncHash)
         {
             _fileEntryFactory = fileEntryFactory;
-            _asyncFilesystem = asyncFilesystem;
-            _hashers = hashers;
+            _asyncDirectory = asyncDirectory;
+            _asyncHash = asyncHash;
         }
 
         public async Task<IModEntry> Create(string modDir)
         {
             var dirInfo = new DirectoryInfo(modDir);
 
-            var contents = await _asyncFilesystem.GetFiles(modDir, "*", SearchOption.AllDirectories);
+            var contents = await _asyncDirectory.GetFilesAsync(modDir, "*", SearchOption.AllDirectories);
             var entryTasks = new List<Task<IFileEntry>>();
 
             foreach (var file in contents)
@@ -39,7 +39,7 @@ namespace Gearbox.Sdk.Index.Factories
                 
                 Name = dirInfo.Name,
                 Directory = modDir,
-                FilesystemHash = await _hashers.MakeFilesystemHash(modDir)
+                FilesystemHash = await _asyncHash.MakeFilesystemHash(modDir)
             };
 
             await Task.WhenAll(entryTasks);

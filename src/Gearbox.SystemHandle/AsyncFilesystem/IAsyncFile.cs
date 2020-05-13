@@ -1,6 +1,8 @@
-﻿namespace SystemHandle.AsyncFilesystem
+﻿using System.IO.Abstractions;
+
+namespace SystemHandle.AsyncFilesystem
 {
-    public interface IAsyncFile
+    public interface IAsyncFile : IFile
     {
         
     }

@@ -12,8 +12,8 @@ namespace SystemHandle
             containerBuilder.RegisterType<SystemHandle>().As<ISystemHandle>();
             containerBuilder.RegisterType<FileSystem>().As<IFileSystem>();
 
-            containerBuilder.RegisterType<AsyncFilesystem.AsyncFilesystem>().As<IAsyncFilesystem>();
             containerBuilder.RegisterType<AsyncDirectory>().As<IAsyncDirectory>();
+            containerBuilder.RegisterType<AsyncFile>().As<IAsyncFile>();
             containerBuilder.RegisterType<RegistryHandle.RegistryHandle>().As<IRegistryHandle>();
             containerBuilder.RegisterType<AsyncArchive>().As<IAsyncArchive>();
         }

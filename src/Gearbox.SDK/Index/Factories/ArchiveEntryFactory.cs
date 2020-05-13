@@ -11,17 +11,17 @@ namespace Gearbox.Sdk.Index.Factories
 {
     public class ArchiveEntryFactory : IArchiveEntryFactory
     {
-        private readonly IAsyncArchive _archiveHandle;
-        private readonly IAsyncFilesystem _asyncFilesystem;
+        private readonly IAsyncArchive _asyncArchive;
+        private readonly IAsyncDirectory _asyncDirectory;
         private readonly IAsyncHash _hashers;
         private readonly IFileEntryFactory _fileEntryFactory;
 
         public ArchiveEntryFactory(IFileEntryFactory fileEntryFactory, IAsyncArchive archiveHandle,
-            IAsyncFilesystem asyncFilesystem, IAsyncHash hashers)
+            IAsyncDirectory asyncDirectory, IAsyncHash hashers)
         {
             _fileEntryFactory = fileEntryFactory;
-            _archiveHandle = archiveHandle;
-            _asyncFilesystem = asyncFilesystem;
+            _asyncArchive = archiveHandle;
+            _asyncDirectory = asyncDirectory;
             _hashers = hashers;
         }
 
@@ -36,12 +36,14 @@ namespace Gearbox.Sdk.Index.Factories
             // Here we begin extracting the archive and process each file as its decompressed.
             var fileEntries = new List<FileEntry>();
             var entryTasks = new List<Task<IFileEntry>>();
-            _archiveHandle.FileExtractedEvent += async (sender, path) =>
+            
+            await foreach (var file in _asyncArchive.ExtractAndYieldOutput(archivePath, extractDir))
             {
-                var fileEntry = _fileEntryFactory.Create(path, extractDir, FileHashType.Md5);
+                var fileEntry = _fileEntryFactory.Create(file, extractDir, FileHashType.Md5);
                 entryTasks.Add(fileEntry);
-            };
-            await _archiveHandle.Extract(extractDir, archivePath);
+            }
+            
+            await _asyncArchive.Extract(extractDir, archivePath);
             await Task.WhenAll(entryTasks);
 
             var archiveEntry = new ArchiveEntry()
@@ -56,7 +58,7 @@ namespace Gearbox.Sdk.Index.Factories
             };
 
             // Delete the extraction directory.
-            await _asyncFilesystem.DeleteDirectory(extractDir);
+            await _asyncDirectory.DeleteAsync(extractDir);
 
             return archiveEntry;
         }

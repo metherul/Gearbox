@@ -8,12 +8,12 @@ namespace Gearbox.Managers.ModOrganizer
 {
     public class ManagerReader : IManagerReader
     {
-        private readonly IAsyncFilesystem _asyncFilesystem;
+        private readonly IAsyncDirectory _asyncDirectory;
         public string ManagerDir { get; set; }
 
-        public ManagerReader(IAsyncFilesystem asyncFilesystem)
+        public ManagerReader(IAsyncDirectory asyncDirectory)
         {
-            _asyncFilesystem = asyncFilesystem;
+            _asyncDirectory = asyncDirectory;
         }
         
         public async Task<List<string>> GetMods()
@@ -24,7 +24,7 @@ namespace Gearbox.Managers.ModOrganizer
         public async Task<List<string>> GetModDirs()
         {
             var modDir = Path.Combine(ManagerDir, "mods");
-            var modDirs = await _asyncFilesystem.GetDirectories(modDir);
+            var modDirs = await _asyncDirectory.GetDirectoriesAsync(modDir);
 
             return modDirs;
         }

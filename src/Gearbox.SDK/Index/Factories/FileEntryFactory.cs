@@ -8,13 +8,11 @@ namespace Gearbox.Sdk.Index
 {
     public class FileEntryFactory : IFileEntryFactory
     {
-        private readonly IAsyncFilesystem _asyncFilesystem;
-        private readonly IAsyncHash _hashers;
+        private readonly IAsyncHash _asyncHash;
 
-        public FileEntryFactory(IAsyncFilesystem asyncFilesystem, IAsyncHash hashers)
+        public FileEntryFactory(IAsyncHash asyncHash)
         {
-            _asyncFilesystem = asyncFilesystem;
-            _hashers = hashers;
+            _asyncHash = asyncHash;
         }
 
         public Task<IFileEntry> Create(string filePath)
@@ -40,9 +38,9 @@ namespace Gearbox.Sdk.Index
                 },
                 Hash = fileHashType switch
                 {
-                    FileHashType.Md5 => await _hashers.MakeMd5(fileInfo.FullName),
-                    FileHashType.Crc32 => await _hashers.MakeCrc32(fileInfo.FullName),
-                    _ => await _hashers.MakeMd5(fileInfo.FullName)
+                    FileHashType.Md5 => await _asyncHash.MakeMd5(fileInfo.FullName),
+                    FileHashType.Crc32 => await _asyncHash.MakeCrc32(fileInfo.FullName),
+                    _ => await _asyncHash.MakeMd5(fileInfo.FullName)
                 },
                 LastWriteTimeUtc = fileInfo.LastWriteTimeUtc,
                 Length = fileInfo.Length
