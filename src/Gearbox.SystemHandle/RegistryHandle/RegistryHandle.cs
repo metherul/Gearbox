@@ -1,15 +1,17 @@
-﻿namespace SystemHandle.RegistryHandle
+﻿using Microsoft.Win32;
+
+namespace SystemHandle.RegistryHandle
 {
     public class RegistryHandle : IRegistryHandle    
     {
-        public string GetValue(string key)
+        public T GetValue<T>(string keyName, string valueName)
         {
-            throw new System.NotImplementedException();
+            return (T)Registry.GetValue(keyName, valueName, string.Empty);
         }
 
-        public void SetValue(string key)
+        public void SetValue<T>(string keyName, string valueName, T value)
         {
-            throw new System.NotImplementedException();
+            Registry.SetValue(keyName, valueName, value);
         }
     }
 }
