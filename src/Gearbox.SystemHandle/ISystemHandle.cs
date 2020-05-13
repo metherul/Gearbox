@@ -5,7 +5,8 @@ namespace SystemHandle
 {
     public interface ISystemHandle
     {
-        IAsyncFilesystem AsyncFilesystem { get; set; }
+        IAsyncFile AsyncFile { get; set; }
+        IAsyncDirectory AsyncDirectory { get; set; }
         IRegistryHandle RegistryHandle { get; set; }
     }
 }
