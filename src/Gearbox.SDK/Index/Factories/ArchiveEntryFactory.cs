@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using SystemHandle.AsyncFilesystem;
 using Gearbox.Sdk.Index.Models;
 using Gearbox.Sdk.Index.Writer;
-using Gearbox.Shared.FsExtensions;
 
 namespace Gearbox.Sdk.Index.Factories
 {

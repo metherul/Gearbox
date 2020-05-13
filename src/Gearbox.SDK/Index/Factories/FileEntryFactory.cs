@@ -1,17 +1,22 @@
 ﻿using System.IO;
+using System.IO.Abstractions;
 using System.Threading.Tasks;
 using SystemHandle.AsyncFilesystem;
 using Gearbox.Sdk.Index.Models;
 using Gearbox.Sdk.Index.Writer;
 
-namespace Gearbox.Sdk.Index
+namespace Gearbox.Sdk.Index.Factories
 {
     public class FileEntryFactory : IFileEntryFactory
     {
+        private readonly IFileInfoFactory _fileInfoFactory;
+        private readonly IPath _path;
         private readonly IAsyncHash _asyncHash;
 
-        public FileEntryFactory(IAsyncHash asyncHash)
+        public FileEntryFactory(IFileInfoFactory fileInfoFactory, IPath path, IAsyncHash asyncHash)
         {
+            _fileInfoFactory = fileInfoFactory;
+            _path = path;
             _asyncHash = asyncHash;
         }
 
@@ -27,14 +32,14 @@ namespace Gearbox.Sdk.Index
 
         public async Task<IFileEntry> Create(string filePath, string relativeTo, FileHashType fileHashType)
         {
-            var fileInfo = new FileInfo(filePath);
+            var fileInfo = _fileInfoFactory.FromFileName(filePath);
             var fileEntry = new FileEntry()
             {
                 Name = fileInfo.Name,
                 FilePath = string.IsNullOrWhiteSpace(relativeTo) switch
                 {
                     true => fileInfo.FullName,
-                    false => Path.GetRelativePath(relativeTo, fileInfo.FullName)
+                    false => _path.GetRelativePath(relativeTo, fileInfo.FullName)
                 },
                 Hash = fileHashType switch
                 {
